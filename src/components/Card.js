@@ -5,12 +5,13 @@ import React from 'react';
 
 class Card extends React.Component{
 
-    myFunction=()=>{
-        alert("Clicked card!")
+    pickPlayerCard=()=>{
+        
+        alert("Player picked card "+this.props.name )
     }
     render(){
         return(
-            <div  onClick={this.myFunction}
+            <div  onClick={this.pickPlayerCard}
             className= {"icon "+this.props.name}>
           <div className="icon-bg">              
               <img src = {this.props.url} alt = {this.props.name}/>
