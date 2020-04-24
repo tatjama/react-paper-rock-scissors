@@ -4,16 +4,21 @@ import rules from '../images/image-rules.svg';
 
 class Rules extends React.Component{
         hideRules = ()=>{
-            alert('Click to hide rules!')
+            alert('Click to hide rules!');
+            document.querySelector('.rules').style.display = "none";
         }
     
     render(){
+        const closeStyle = {
+            "width": "20px",
+            "height": "20px"
+        }
         return(
             <div className="rules">
                 <div className="first-row">
                     <h2>Rules</h2>
                     <img 
-                    style={{"width":"20px", "height":"20px"}} 
+                    style={closeStyle} 
                     onClick={this.hideRules} 
                     src={close}
                     alt="close" />
