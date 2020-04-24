@@ -1,9 +1,11 @@
 import React from 'react';
 
 class Button extends React.Component{
+
+    showRules = ()=>{alert("Clicked button to show rules!")}
     render(){
         return(               
-        <button onclick="showRules()">
+        <button onClick={this.showRules}>
             R u l e s
         </button>
   
