@@ -1,14 +1,15 @@
 import React from 'react';
 import Scissors from './Scissors';
 import Rock from './Rock';
-import Paper from './Paper';
+import Card from './Card';
+
 
 class Second extends React.Component{
     render(){
         return(
             <div className="section second">
                 <div className="first-row">
-                   <Paper/>                    
+                   <Card name = "paper"/>                    
                     <Scissors/>
                 </div>
                 <Rock/>
