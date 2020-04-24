@@ -1,7 +1,8 @@
 import React from 'react';
-import Scissors from './Scissors';
-import Rock from './Rock';
 import Card from './Card';
+import paper from '../images/icon-paper.svg';
+import scissors from '../images/icon-scissors.svg';
+import rock from '../images/icon-rock.svg';
 
 
 class Second extends React.Component{
@@ -9,10 +10,10 @@ class Second extends React.Component{
         return(
             <div className="section second">
                 <div className="first-row">
-                   <Card name = "paper"/>                    
-                    <Scissors/>
+                   <Card url = {paper} name = "paper"/>                    
+                    <Card url = {scissors} name = "scissors"/>
                 </div>
-                <Rock/>
+                <Card url = {rock} name = "rock"/>
             </div>
         )
     }
