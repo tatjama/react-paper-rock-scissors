@@ -1,13 +1,13 @@
 import React from 'react';
-import First from './First';
-import Second from './Second';
+import Header from './Header';
+import Intro from './Intro';
 
 class Main extends React.Component{
     render(){
         return(
             <div className="main">
-                <First/>
-                <Second/>
+                <Header/>
+                <Intro/>
             </div>
 
         )

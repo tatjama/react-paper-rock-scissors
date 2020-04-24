@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button';
 
-class Third extends React.Component{
+class Footer extends React.Component{
     render(){
         return(
             <div className="section third">    
@@ -11,4 +11,4 @@ class Third extends React.Component{
     }
 }
 
-export default Third;
+export default Footer;

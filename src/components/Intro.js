@@ -5,7 +5,7 @@ import scissors from '../images/icon-scissors.svg';
 import rock from '../images/icon-rock.svg';
 
 
-class Second extends React.Component{
+class Intro extends React.Component{
     render(){
         return(
             <div className="section second">
@@ -18,4 +18,4 @@ class Second extends React.Component{
         )
     }
 }
-export default Second;
+export default Intro;

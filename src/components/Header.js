@@ -4,7 +4,7 @@ import Score from './Score';
 import ChangeGame from './ChangeGame';
 
 
-class First extends React.Component{
+class Header extends React.Component{
     render(){
         return(
             <div className="section first">
@@ -15,4 +15,4 @@ class First extends React.Component{
         )
     }
 }
-export default First;
+export default Header;
