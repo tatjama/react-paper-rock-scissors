@@ -10,9 +10,7 @@ class GameCard extends React.Component{
                     <p style={messageStyle}>{this.props.message}</p>    
                     <div id="player-card" className={"icon "+this.props.name}>
                         <div className="icon-bg">
-                             <img id="player-card-image" 
-                                src={this.props.url}
-                               alt={this.props.name} />
+                             
                         </div>
                     </div>    
                 </div>                 

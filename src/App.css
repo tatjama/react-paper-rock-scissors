@@ -13,7 +13,7 @@ html, body{
     width: 1366px;
     height: 728px;
     padding: 43px;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 .main{
     display: flex;
@@ -190,7 +190,7 @@ h2{
     font-size: 28px;
 }
 .start-game{
-    display: none;
+   /* display: none;*/
 }
 .game {
     display: flex;
@@ -199,7 +199,7 @@ h2{
     padding: 80px;
 }
 #house-card{
-    display: none;
+   /* display: none;*/
 }
 .game p{
     font-size: 16px;
