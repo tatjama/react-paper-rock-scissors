@@ -12,11 +12,13 @@ class Intro extends React.Component{
         super(props);
         this.state={
             show: true,
+            card: null
         }
     }
     //argument is event, anyone because we took  argument from child element, in this case argument is state
     pickPlayerCard=(event)=>{
         console.log(event);
+        this.setState({card:event})
         this.setState({show: false})
             
         
@@ -47,7 +49,7 @@ class Intro extends React.Component{
             </div>
         )
         }else{
-            return(<StartGame/>)
+            return(<StartGame name ={this.state.card} />)
         }
     }
 }

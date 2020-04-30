@@ -8,8 +8,8 @@ class PlayerCard extends React.Component{
     render(){
         return(
             <div className="game-div">
-                <GameCard url = {paper} name = "paper" message = "Y o u &nbsp; P i c k e d">
-                <Icon  name="paper"/>
+                <GameCard url = {paper} name = {this.props.name} message = "Y o u &nbsp; P i c k e d">
+                <Icon  name={this.props.name}/>
                     </GameCard>
             </div>
         )

@@ -12,11 +12,11 @@ class HouseCard extends React.Component{
                 url={rock} 
                 message ="C l i c k &nbsp; o n &nbsp; c a r d!"
                 />   
-                <GameCard 
-                url = {rock} 
+                {/*<GameCard 
+                url = ""
                 name = 'rock' 
                 message = "T h e &nbsp; H o u s e &nbsp; P i c k e d"
-                />        
+                />   */}     
             </div>
         )
     }
