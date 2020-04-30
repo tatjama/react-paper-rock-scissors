@@ -10,6 +10,10 @@ class Card extends React.Component{
         super(props);
         this.state = {name:this.props.name}
     }
+
+    componentWillUnmount(){
+        alert('Components cards are unmounted!')
+    }
     
     render(){
         console.log(this.state.name)

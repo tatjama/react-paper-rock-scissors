@@ -3,15 +3,28 @@ import Card from './Card';
 import paper from '../images/icon-paper.svg';
 import scissors from '../images/icon-scissors.svg';
 import rock from '../images/icon-rock.svg';
+import StartGame from './StartGame';
 
 
 class Intro extends React.Component{
-    //argument is event, anyone becouse we took argument from child element, in this case argument is state
+    
+    constructor(props){
+        super(props);
+        this.state={
+            show: true,
+        }
+    }
+    //argument is event, anyone because we took  argument from child element, in this case argument is state
     pickPlayerCard=(event)=>{
         console.log(event);
+        this.setState({show: false})
+            
+        
     }
 
     render(){
+       // let myIntro;
+        if(this.state.show){        
         return(
             <div className="section second">
                 <div className="first-row">
@@ -33,6 +46,9 @@ class Intro extends React.Component{
                 />
             </div>
         )
+        }else{
+            return(<StartGame/>)
+        }
     }
 }
 export default Intro;
