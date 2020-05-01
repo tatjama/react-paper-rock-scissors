@@ -1,9 +1,5 @@
 import React from 'react';
 import CardMessage from './CardMessage';
-//import GameCard from './GameCard';
-//import paper from '../images/icon-paper.svg';
-//import Icon from './Icon';
-
 
 class CardPlayer extends React.Component{
     render(){

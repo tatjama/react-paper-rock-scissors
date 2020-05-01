@@ -19,31 +19,31 @@ class Intro extends React.Component{
     pickPlayerCard=(event)=>{
         console.log(event);
         this.setState({card:event})
-        this.setState({show: false})
-            
-        
+        this.setState({show: false})       
     }
 
     render(){
-       // let myIntro;
+       const paperCard = "paper";
+       const rockCard = "rock";
+       const scissorsCard = "scissors";
         if(this.state.show){        
         return(
             <div className="section second">
                 <div className="first-row">
                    <Card 
                    url = {paper} 
-                   name = "paper"
+                   name = {paperCard}
                    onClick = {this.pickPlayerCard}
                    />                    
                     <Card 
                     url = {scissors} 
-                    name = "scissors"
+                    name = {scissorsCard}
                     onClick = {this.pickPlayerCard}
                     />
                 </div>
                 <Card 
                 url = {rock} 
-                name = "rock"
+                name = {rockCard}
                 onClick = {this.pickPlayerCard}
                 />
             </div>
