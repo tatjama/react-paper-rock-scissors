@@ -1,26 +1,36 @@
 import React from 'react';
-//import PlayerCard from './PlayerCard';
-//import HouseCard from './HouseCard';
+import CardPlayer from './CardPlayer';
+import HouseCard from './HouseCard';
+import CardBlank from './CardBlank';
 
 class StartGame extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            show:true,
+        }
+    }
+
+    click=()=>{
+        alert('Klinuto blank preko start game')
+        this.setState({show:false})
+        
+    }
     render(){
         console.log("igrac je igrao "+this.props.name)
+        let houseCard;
+            if(this.state.show){
+                houseCard = <CardBlank onClick = {this.click}/> 
+            }else{
+                houseCard = <HouseCard/>
+            }
         return(
+            
+
             <div className="start-game">
-                <div className="game">
+                <div className="game" >
                      {/***PLAYER ICON**/}
-                     <div className="game-div">
-                        <p>Y o u &nbsp; P i c k e d</p>
-    
-                        <div id="player-card" className={"icon "+this.props.name}>
-                            <div className="icon-bg">
-                                <img 
-                                id="player-card-image" 
-                                alt={"player card is "+this.props.name} 
-                                src={require('../images/icon-'+this.props.name+'.svg')}/>
-                            </div>
-                        </div>    
-                    </div>
+                     <CardPlayer name = {this.props.name}/>
                     {/**<!--Play again!-->**/}
                     {/*<div id="play-again" className="game-div">
                         <h2>Who win?</h2>
@@ -28,14 +38,10 @@ class StartGame extends React.Component{
                             <p>P l a y &nbsp; A g a i n</p>
                         </div>
                       </div> */}
-                    {/**HOUSE ICON */}
-                    {/**<!--BLANK ICON-->**/}
-                    <div className = "game-div">
-                    <p>C l i c k &nbsp; C a r d </p>
-                        <div id="blank" className="icon blank">
-                            <div className="icon-bg"></div>
-                        </div>
-                    </div>
+                    {/**HOUSE ICON */}    
+                    <div >                                 
+                         {houseCard}  
+                        </div>                 
                 </div>
             </div>
         )
