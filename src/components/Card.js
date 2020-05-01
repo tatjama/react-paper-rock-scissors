@@ -12,7 +12,7 @@ class Card extends React.Component{
     }
 
     componentWillUnmount(){
-        alert('Components cards are unmounted!')
+        console.log('Components cards are unmounted!')
     }
     
     render(){

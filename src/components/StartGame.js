@@ -3,6 +3,28 @@ import CardPlayer from './CardPlayer';
 import CardBlank from './CardBlank';
 import PlayAgain from './PlayAgain';
 
+const paperCard = "paper";
+const scissorsCard = "scissors";
+const rockCard = "rock";
+
+function newCard(){
+    let card;
+   let random = ( Math.floor(Math.random()*3)+1);
+   switch(random){
+       case 1: card = paperCard;
+       break;
+       case 2: card = scissorsCard;
+       break;
+       default: card =  rockCard;               
+   }
+   return card;
+}
+
+function whoWin() {            
+
+    return "winner"
+}
+
 class StartGame extends React.Component{
     constructor(props){
         super(props);
@@ -13,35 +35,15 @@ class StartGame extends React.Component{
         }
     }
 
-    click=()=>{
-        const paperCard = "paper";
-        const scissorsCard = "scissors";
-        const rockCard = "rock";
-        function newCard(){
-            let card;
-           let random = ( Math.floor(Math.random()*3)+1);
-           switch(random){
-               case 1: card = paperCard;
-               break;
-               case 2: card = scissorsCard;
-               break;
-               default: card =  rockCard;               
-           }
-           return card;
-        }
-        function whoWin() {
-
-            return "winner"
-        }
-        alert('Klinuto blank preko start game')
+    click=()=>{            
         this.setState({
             show:false,
             card:newCard(),
             win: whoWin(),
         })            
     }
-    render(){
-        console.log("igrac je igrao "+this.props.name)
+
+    render(){        
         let houseCard;
             if(this.state.show){
                 houseCard = <div className = "game">

@@ -5,9 +5,11 @@ import scissors from '../images/icon-scissors.svg';
 import rock from '../images/icon-rock.svg';
 import StartGame from './StartGame';
 
+const paperCard = "paper";
+const rockCard = "rock";
+const scissorsCard = "scissors";
 
-class Intro extends React.Component{
-    
+class Intro extends React.Component{    
     constructor(props){
         super(props);
         this.state={
@@ -15,6 +17,7 @@ class Intro extends React.Component{
             card: null
         }
     }
+    
     //argument is event, anyone because we took  argument from child element, in this case argument is state
     pickPlayerCard=(event)=>{
         console.log(event);
@@ -23,9 +26,7 @@ class Intro extends React.Component{
     }
 
     render(){
-       const paperCard = "paper";
-       const rockCard = "rock";
-       const scissorsCard = "scissors";
+       
         if(this.state.show){        
         return(
             <div className="section second">
