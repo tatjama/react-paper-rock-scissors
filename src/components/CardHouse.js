@@ -1,10 +1,7 @@
 import React from 'react';
-//import GameCard from './GameCard';
-//import rock from '../images/icon-rock.svg';
-//import GameCard from './GameCard';
-import CardMessage from './CardMessage';
 
-class HouseCard extends React.Component{
+
+class CardHouse extends React.Component{
          
 
     render(){
@@ -22,4 +19,4 @@ class HouseCard extends React.Component{
     }
 }
 
-export default HouseCard;
+export default CardHouse;

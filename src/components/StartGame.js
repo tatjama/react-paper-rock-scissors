@@ -36,9 +36,13 @@ class StartGame extends React.Component{
         console.log("igrac je igrao "+this.props.name)
         let houseCard;
             if(this.state.show){
-                houseCard = <CardBlank onClick = {this.click}/> 
+                houseCard = <div className = "game">
+                 <CardPlayer name = {this.props.name}/>   
+                <CardBlank onClick = {this.click}/> 
+                </div>
             }else{               
-                houseCard = <div>
+                houseCard = <div className = "game">
+                    <CardPlayer name = {this.props.name}/>
                     <PlayAgain/>
                     <CardPlayer name = {this.state.card}/>
                 </div>
@@ -48,16 +52,7 @@ class StartGame extends React.Component{
 
         return(
             <div className="start-game">
-                <div className="game" >
-                     {/***PLAYER ICON**/}
-                     <CardPlayer name = {this.props.name}/>
-                    {/**<!--Play again!-->**/}
-                    {/* */}
-                    {/**HOUSE ICON */}    
-                                                   
-                         {houseCard}  
-                                   
-                </div>
+                {houseCard}
             </div>
         )
     }
