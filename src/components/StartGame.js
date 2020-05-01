@@ -8,13 +8,28 @@ class StartGame extends React.Component{
         super(props);
         this.state={
             show:true,
+            card: null,
         }
     }
 
     click=()=>{
+        function newCard(){
+            let card;
+           let random = ( Math.floor(Math.random()*3)+1);
+           switch(random){
+               case 1: card = 'paper';
+               break;
+               case 2: card = 'scissors';
+               break;
+               default: card =  'rock';               
+           }
+           return card;
+        }
         alert('Klinuto blank preko start game')
-        this.setState({show:false})
-        
+        this.setState({
+            show:false,
+            card:newCard() ,
+        })            
     }
     render(){
         console.log("igrac je igrao "+this.props.name)
@@ -24,9 +39,10 @@ class StartGame extends React.Component{
             }else{
                 houseCard = <HouseCard/>
             }
-        return(
-            
+            console.log(this.state.show);
+            console.log(this.state.card)
 
+        return(
             <div className="start-game">
                 <div className="game" >
                      {/***PLAYER ICON**/}
@@ -41,7 +57,7 @@ class StartGame extends React.Component{
                     {/**HOUSE ICON */}    
                     <div >                                 
                          {houseCard}  
-                        </div>                 
+                    </div>                 
                 </div>
             </div>
         )
