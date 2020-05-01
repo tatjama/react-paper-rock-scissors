@@ -1,7 +1,8 @@
 import React from 'react';
 import CardPlayer from './CardPlayer';
-import HouseCard from './HouseCard';
+//import HouseCard from './HouseCard';
 import CardBlank from './CardBlank';
+import PlayAgain from './PlayAgain';
 
 class StartGame extends React.Component{
     constructor(props){
@@ -36,8 +37,11 @@ class StartGame extends React.Component{
         let houseCard;
             if(this.state.show){
                 houseCard = <CardBlank onClick = {this.click}/> 
-            }else{
-                houseCard = <HouseCard/>
+            }else{               
+                houseCard = <div>
+                    <PlayAgain/>
+                    <CardPlayer name = {this.state.card}/>
+                </div>
             }
             console.log(this.state.show);
             console.log(this.state.card)
@@ -48,16 +52,11 @@ class StartGame extends React.Component{
                      {/***PLAYER ICON**/}
                      <CardPlayer name = {this.props.name}/>
                     {/**<!--Play again!-->**/}
-                    {/*<div id="play-again" className="game-div">
-                        <h2>Who win?</h2>
-                        <div className="score play-again">
-                            <p>P l a y &nbsp; A g a i n</p>
-                        </div>
-                      </div> */}
+                    {/* */}
                     {/**HOUSE ICON */}    
-                    <div >                                 
+                                                   
                          {houseCard}  
-                    </div>                 
+                                   
                 </div>
             </div>
         )
