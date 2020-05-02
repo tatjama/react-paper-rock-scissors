@@ -2,13 +2,13 @@ import React from 'react';
 import CardPlayer from './CardPlayer';
 import CardBlank from './CardBlank';
 import PlayAgain from './PlayAgain';
-import Gradient from './Gradient';
+//import Gradient from './Gradient';
 
 const paperCard = "paper";
 const scissorsCard = "scissors";
 const rockCard = "rock";
-const win = `you  win`;
-const lose = `you  lose`;
+const win = "win";
+const lose = "lose";
 const equal = "equal";
 
 function newCard(){
@@ -83,7 +83,7 @@ class StartGame extends React.Component{
             }else{               
                 houseCard = <div className = "game">
                     <CardPlayer name = {this.props.name} message="Y o u &nbsp; P i c k e d"/>
-                    <PlayAgain win = {winner}/>
+                    <PlayAgain win = {"you "+winner} id = {winner}/>
                     <CardPlayer name = {this.state.card} message="T h e &nbsp; h o u s e &nbsp; P i c k e d"/>
                     
                 </div>

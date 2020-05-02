@@ -7,7 +7,7 @@ function PlayAgain(props) {
             <h2>{props.win}</h2>
             <div className="score play-again">
                 <p>P l a y &nbsp; A g a i n</p>
-                <Gradient/>
+                <Gradient id = {props.id}/>
             </div>
             
         </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Gradient() {
+function Gradient(props) {
     return(
-        <div id="gradient-lose" className="gradient">
+        <div id={props.id} className="gradient">
             <div className="gradient-four">
                 <div className="gradient-three">
                     <div className="gradient-two">
