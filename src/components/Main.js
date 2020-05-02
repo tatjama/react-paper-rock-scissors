@@ -9,13 +9,15 @@ class Main extends React.Component{
             score:0,
         }
     }
+
+
     
    
     render(){
         return(
             <div className="main">
                 <Header score = {this.state.score}/>
-                <Intro/>
+                <Intro />
             </div>
 
         )

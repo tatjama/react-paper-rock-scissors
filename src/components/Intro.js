@@ -17,9 +17,11 @@ class Intro extends React.Component{
             card: null
         }
     }
-    
+    //POCETEK IDEJE
+
     //argument is event, anyone because we took  argument from child element, in this case argument is state
     pickPlayerCard=(event)=>{
+        alert('pick player card')
         console.log(event);
         this.setState({card:event})
         this.setState({show: false})       

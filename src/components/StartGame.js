@@ -11,6 +11,7 @@ const win = "win";
 const lose = "lose";
 const equal = "equal";
 
+
 function newCard(){
     let card;
    let random = ( Math.floor(Math.random()*3)+1);
@@ -42,6 +43,21 @@ function calculateWinner(player, card) {
               }
                    return null; 
 }
+function calculateResult(winner){
+    let result;
+    switch(winner){
+        case "win": result = 1;
+        break;
+        case "lose": result = -1;
+        break;
+        case "equal": result = 0;
+        break;
+        default: result=null;
+    }
+    
+console.log(result);
+return result;
+}
 
 class StartGame extends React.Component{
     constructor(props){
@@ -50,27 +66,37 @@ class StartGame extends React.Component{
             player: props.name,
             show:true,
             card: null,
+            winner: null,
+            result: null,
         }
     }
+   
 
-    click=()=>{     
+    handleClick=()=>{     
         this.setState({            
             show:false,
-            card:newCard(),           
+            card:newCard(), 
+                   
         })            
     }
     render(){
        //console.log(this.state.player);
          //   console.log(this.state.show);
            // console.log(this.state.card);
+          
         const winner = calculateWinner(this.state.player, this.state.card);
+
         console.log(winner);
+        const result = calculateResult(winner);
+        console.log(result);
+       // console.log(this.state.result)
+       
                
         let houseCard;
             if(this.state.show){
                 houseCard = <div className = "game">
                  <CardPlayer name = {this.props.name} message="Y o u &nbsp; P i c k e d"/>   
-                <CardBlank onClick = {this.click}/> 
+                <CardBlank onClick = {this.handleClick}/> 
                 </div>
             }else{               
                 houseCard = <div className = "game">
