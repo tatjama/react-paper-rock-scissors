@@ -2,7 +2,7 @@ import React from 'react';
 import CardPlayer from './CardPlayer';
 import CardBlank from './CardBlank';
 import PlayAgain from './PlayAgain';
-//import Gradient from './Gradient';
+
 
 const paperCard = "paper";
 const scissorsCard = "scissors";
@@ -50,30 +50,22 @@ class StartGame extends React.Component{
             player: props.name,
             show:true,
             card: null,
-            win: "Who Win?!",
         }
     }
 
-    click=()=>{         
-       /* function whoWin() {
-            return "winner"
-        }*/
-        alert('Klinuto blank preko start game')
+    click=()=>{     
         this.setState({            
             show:false,
-            card:newCard(),
-           // win: whoWin(),
+            card:newCard(),           
         })            
     }
     render(){
-       console.log(this.state.player);
-            console.log(this.state.show);
-            console.log(this.state.card);
+       //console.log(this.state.player);
+         //   console.log(this.state.show);
+           // console.log(this.state.card);
         const winner = calculateWinner(this.state.player, this.state.card);
         console.log(winner);
-        //this.setState({win:winner})
-            
-       
+               
         let houseCard;
             if(this.state.show){
                 houseCard = <div className = "game">
@@ -83,7 +75,7 @@ class StartGame extends React.Component{
             }else{               
                 houseCard = <div className = "game">
                     <CardPlayer name = {this.props.name} message="Y o u &nbsp; P i c k e d"/>
-                    <PlayAgain win = {"you "+winner} id = {winner}/>
+                    <PlayAgain win = {`you ${winner}`} id = {winner}/>
                     <CardPlayer name = {this.state.card} message="T h e &nbsp; h o u s e &nbsp; P i c k e d"/>
                     
                 </div>

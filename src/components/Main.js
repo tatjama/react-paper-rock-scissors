@@ -3,15 +3,18 @@ import Header from './Header';
 import Intro from './Intro';
 
 class Main extends React.Component{
-
+    constructor(props){
+        super(props);
+        this.state={
+            score:0,
+        }
+    }
     
-    /*componentWillUnmount(){
-        alert('Component Intro Will Unmounted')
-    }*/
+   
     render(){
         return(
             <div className="main">
-                <Header/>
+                <Header score = {this.state.score}/>
                 <Intro/>
             </div>
 

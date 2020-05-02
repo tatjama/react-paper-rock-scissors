@@ -4,15 +4,13 @@ import Score from './Score';
 import ChangeGame from './ChangeGame';
 
 
-class Header extends React.Component{
-    render(){
-        return(
+function Header (props){
+      return(
             <div className="section first">
                     <Logo/>
                 <ChangeGame/>
-                <Score/>
+                <Score score = {props.score}/>
             </div>
-        )
-    }
+        )    
 }
 export default Header;

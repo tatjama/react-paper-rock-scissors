@@ -1,14 +1,12 @@
 import React from 'react';
 
-class Score extends React.Component{
-    render(){
+function Score (props){    
         return(
                 <div className="score">
                     <p >S c o r e</p>
-                    <h1>12</h1>
+                    <h1>{props.score}</h1>
                 </div>
-        )
-    }
+        )    
 }
 
 export default Score;
