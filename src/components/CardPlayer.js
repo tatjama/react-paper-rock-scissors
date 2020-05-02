@@ -5,7 +5,7 @@ class CardPlayer extends React.Component{
     render(){
         return(
             <div className="game-div">
-                     <CardMessage message="Y o u &nbsp; P i c k e d"/>
+                     <CardMessage message={this.props.message}/>
                     <div id="player-card">
                         <div className={"icon "+this.props.name}>
                             <div className="icon-bg">
