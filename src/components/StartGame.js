@@ -2,6 +2,7 @@ import React from 'react';
 import CardPlayer from './CardPlayer';
 import CardBlank from './CardBlank';
 import PlayAgain from './PlayAgain';
+import memoize from 'memoize-one';
 
 
 const paperCard = "paper";
@@ -25,24 +26,7 @@ function newCard(){
    return card;
 }
 
-function calculateWinner(player, card) {
-    if(player === card){
-        return equal;
-    }else if(
-        (player === paperCard && card === rockCard) ||
-        (player === scissorsCard && card === paperCard) ||
-        (player === rockCard && card === scissorsCard)  
-              ){
-                return win;
-              }else if(
-                (player === paperCard && card === scissorsCard) ||
-                (player === scissorsCard && card === rockCard) ||
-                (player === rockCard && card === paperCard)
-              ){
-                  return lose;
-              }
-                   return null; 
-}
+
 function calculateResult(winner){
     let result;
     switch(winner){
@@ -71,13 +55,32 @@ class StartGame extends React.Component{
         }
     }
 
+    calculateWinner = memoize( (player, card) => {
+        if(player === card){
+            return equal;
+        }else if(
+            (player === paperCard && card === rockCard) ||
+            (player === scissorsCard && card === paperCard) ||
+            (player === rockCard && card === scissorsCard)  
+                  ){
+                    return win;
+                  }else if(
+                    (player === paperCard && card === scissorsCard) ||
+                    (player === scissorsCard && card === rockCard) ||
+                    (player === rockCard && card === paperCard)
+                  ){
+                      return lose;
+                  }
+                       return null; 
+    })
+
     componentDidMount(){
         alert('before setState')
        
         console.log(this.state.card)
         alert('after setState')
     }
-   compo
+   
 
     handleClick=()=>{     
 
@@ -95,7 +98,7 @@ class StartGame extends React.Component{
        //console.log(this.state.player);
          //   console.log(this.state.show);
             console.log(this.state.card);
-           const  winner =  calculateWinner(this.state.player, this.state.card);
+           const  winner =  this.calculateWinner(this.state.player, this.state.card);
         
 
         console.log(this.state.winner);
