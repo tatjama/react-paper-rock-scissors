@@ -70,28 +70,40 @@ class StartGame extends React.Component{
             result: null,
         }
     }
-   
+
+    componentDidMount(){
+        alert('before setState')
+       
+        console.log(this.state.card)
+        alert('after setState')
+    }
+   compo
 
     handleClick=()=>{     
+
         this.setState({            
             show:false,
             card:newCard(), 
-                   
-        })            
+            //winner: calculateWinner(this.state.player, this.state.card),  
+            result: calculateResult(this.state.winner),
+        })        
+        console.log(this.state.player);
+        console.log(this.state.card);
+        console.log(this.state.winner)    
     }
     render(){
        //console.log(this.state.player);
          //   console.log(this.state.show);
-           // console.log(this.state.card);
-          
-        const winner = calculateWinner(this.state.player, this.state.card);
+            console.log(this.state.card);
+           const  winner =  calculateWinner(this.state.player, this.state.card);
+        
 
-        console.log(winner);
-        const result = calculateResult(winner);
-        console.log(result);
+        console.log(this.state.winner);
+        //const result = calculateResult(winner);
+        //console.log(result);
        // console.log(this.state.result)
        
-               
+         console.log(this.state.result)      
         let houseCard;
             if(this.state.show){
                 houseCard = <div className = "game">

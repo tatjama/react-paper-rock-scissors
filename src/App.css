@@ -276,14 +276,14 @@ h2{
 #equal{
    display: none;
 }
-#lose{
+#you lose{
     position: relative;
     left: 75px;
     bottom: 322px;
     z-index: -1;
     
 }
-#win{
+#you win{
   position: relative;
   bottom: 322px;
   left: -555px;  
